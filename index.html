@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="css/valentine.css" />
   </head>
   <body>
-    <div id="valentineQuestion"><b>Naatho date ki vasthava?</b></div>
+    <div id="valentineQuestion"><b>Naatho date ki vasthava? plzz🥹🥹
+ </b></div>
     <button class="answerButton" onclick="location.href='thankyou.html'">
       Yes
     </button>
@@ -16,17 +17,37 @@
     <img src="cat.gif" alt="cat asking question" class="responsive" />
 
     <script>
+      // Array of different "no" messages
+      const noMessages = [
+        "Nen Raanu o(╥﹏╥)o",
+        "Please bujji (ಥ﹏ಥ)",
+        "Are you sure? ಥ_ಥ",
+        "Don't do this to me ༼ ༎ຶ ෴ ༎ຶ༽",
+        "Endhuku? (╯︵╰,)",
+        "Nen Edustha (っ˘̩╭╮˘̩)っ",
+        "You're breaking my heart ಥ_ಥ",
+        "One more chance? ༼ つ ◕_◕ ༽つ"
+      ];
+      
+      let currentNoIndex = 0;
+      
       document
         .getElementById("noButton")
         .addEventListener("click", function () {
+          // Change the no button text
+          currentNoIndex = (currentNoIndex + 1) % noMessages.length;
+          this.textContent = noMessages[currentNoIndex];
+          
+          // Increase yes button size (original functionality)
           var yesButton = document.querySelector(
             'button[onclick*="thankyou.html"]'
           );
           var currentFontSize = parseInt(
             window.getComputedStyle(yesButton).fontSize
           );
-          yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 5px
+          yesButton.style.fontSize = currentFontSize + 10 + "px";
         });
     </script>
   </body>
 </html>
+
